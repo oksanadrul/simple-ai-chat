@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register -r dotenv/config src/basic_chat/index.ts"
+    "start-basic-chat": "node -r ts-node/register -r dotenv/config src/basic_chat/index.ts",
+    "start-tools": "node -r ts-node/register -r dotenv/config src/tools/index.ts"
   },
   "keywords": [],
   "author": "",

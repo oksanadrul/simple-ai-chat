@@ -1,4 +1,3 @@
-import { count } from "console";
 import OpenAI from "openai";
 import { encoding_for_model } from "tiktoken";
 
