@@ -2,7 +2,7 @@ import OpenAI from "openai";
 import { encoding_for_model } from "tiktoken";
 
 const MODEL = "gpt-4.1";
-const MAX_TOKENS = 700;
+const MAX_TOKENS = 700; // Set a lower token limit to trigger message removal sooner. Just for demonstration purposes.
 
 const openai = new OpenAI({});
 const encoder = encoding_for_model(MODEL);
@@ -15,6 +15,10 @@ const context: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
 ];
 
 async function createChatCompletion() {
+  if (countTokens() > MAX_TOKENS) {
+    removeOldMessages();
+  }
+
   const response = await openai.chat.completions.create({
     model: MODEL,
     messages: context,
@@ -24,10 +28,6 @@ async function createChatCompletion() {
     role: "assistant",
     content: response.choices[0].message.content,
   });
-
-  if ((response.usage?.total_tokens ?? 0) > MAX_TOKENS) {
-    removeOldMessages();
-  }
 
   console.log("Context:", context);
   console.log(

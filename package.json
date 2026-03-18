@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start-basic-chat": "node -r ts-node/register -r dotenv/config src/basic_chat/index.ts",
-    "start-tools": "node -r ts-node/register -r dotenv/config src/tools/index.ts"
+    "start-tools": "node -r ts-node/register -r dotenv/config src/tools/index.ts",
+    "start-images": "node -r ts-node/register -r dotenv/config src/images/index.ts"
   },
   "keywords": [],
   "author": "",
