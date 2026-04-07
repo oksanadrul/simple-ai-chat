@@ -9,7 +9,8 @@
     "start-images": "node -r ts-node/register -r dotenv/config src/images/index.ts",
     "start-audio": "node -r ts-node/register -r dotenv/config src/audio/index.ts",
     "start-embeddings": "node -r ts-node/register -r dotenv/config src/embeddings/main.ts",
-    "start-similarity-search": "node -r ts-node/register -r dotenv/config src/embeddings/similar.ts"
+    "start-similarity-search": "node -r ts-node/register -r dotenv/config src/embeddings/similar.ts",
+    "start-project-movies": "node -r ts-node/register -r dotenv/config src/embeddings/project/movieRecommender.ts"
   },
   "keywords": [],
   "author": "",
